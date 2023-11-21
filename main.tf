@@ -23,7 +23,7 @@ provider "github" {
  
  
 module "aci" {
-  source                  = "git::https://github.com/Rahulsurya1/checkaccesstoken.git
+  source                  = "git::https://<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>github.com/Rahulsurya1/checkaccesstoken.git
   aci_name                = var.aci_name
   resource_group          = data.azurerm_resource_group.rg
   aci_subnet_ids          = var.aci_subnets
