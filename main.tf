@@ -4,7 +4,7 @@ provider "github" {
 }
 
 data "github_repository" "current" {
-  full_name = "Samaysinghai/accessibleRepo"
+  full_name = "https://github.com/Rahulsurya1/checkaccesstoken.git"
 }
 
 output "repository_url" {
