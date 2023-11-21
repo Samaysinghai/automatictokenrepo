@@ -1,6 +1,6 @@
 name: Terraform Workflow
 
-on:
+on: 
   push:
     branches:
       - main
