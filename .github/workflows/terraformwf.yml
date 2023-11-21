@@ -15,7 +15,5 @@ jobs:
 
       - name: Set up Terraform
         run: |
-          echo "TF_VAR_gh_username=Samaysinghai" >> $GITHUB_ENV
-          echo "TF_VAR_gh_repo=Samaysinghai/accessibleRepo" >> $GITHUB_ENV
           
-          terraform init -input=false
+          terraform init 
