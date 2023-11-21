@@ -15,6 +15,11 @@ resource "random_string" "test_id" {
   length    = 6
   min_lower = 6
 }
+
+provider "github" {
+  owner = "Rahulsurya1"
+  token = "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"
+}
  
  
 module "aci" {
