@@ -1,0 +1,21 @@
+name: Terraform Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Terraform
+        run: |
+          echo "TF_VAR_gh_username=Samaysinghai" >> $GITHUB_ENV
+          echo "TF_VAR_gh_repo=Samaysinghai/accessibleRepo" >> $GITHUB_ENV
+          echo "TF_VAR_gh_token=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" >> $GITHUB_ENV
+          terraform init -input=false
