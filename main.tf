@@ -1,6 +1,6 @@
 provider "github" {
   owner = "Samaysinghai"
-  token = "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"
+  token = ""
 }
 
 data "github_repository" "current" {
