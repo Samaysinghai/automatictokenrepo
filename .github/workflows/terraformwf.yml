@@ -15,10 +15,8 @@ jobs:
 
       - name: Set up Terraform
         run: |
-          echo "TF_VAR_gh_username=Rahulsurya1" >> $GITHUB_ENV
-          echo "TF_VAR_gh_repo=checkaccesstoken" >> $GITHUB_ENV
-          echo "TF_VAR_gh_token=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" >> $GITHUB_ENV
-          terraform init -input=false
+          export GITHUB_TOKEN=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
+           terraform init -input=false
 
       - name: Terraform Plan
         run: terraform plan -input=false
