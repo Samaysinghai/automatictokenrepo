@@ -9,17 +9,16 @@ jobs:
   terraform:
     runs-on: ubuntu-latest
 
+    env:
+      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
       - name: Set up Terraform
         run: |
-          export GITHUB_TOKEN=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
-           terraform init 
+          echo "GITHUB_TOKEN=${{ secrets.GH_TOKEN }}" >> $GITHUB_ENV
+          terraform init
+          
 
-
-      - name: Terraform Plan
-        run: terraform plan -input=false
-
-      # Add more steps as needed for apply, destroy, etc.
