@@ -10,7 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      MY_PAT: ${{ secrets.MY_PAT }}
 
     steps:
       - name: Checkout code
@@ -18,8 +19,5 @@ jobs:
 
       - name: Set up Terraform
         run: |
-          echo "GITHUB_TOKEN=${{ secrets.GH_TOKEN }}" >> $GITHUB_ENV
-          terraform init
+          terraform init -backend-config="token=${GH_TOKEN}"
           # Other Terraform commands...
-
-      # Additional steps for Terraform apply, plan, etc.
