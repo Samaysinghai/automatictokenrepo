@@ -18,7 +18,10 @@ jobs:
 
       - name: Set up Terraform
         run: |
-          echo "GITHUB_TOKEN=${{ secrets.GH_TOKEN }}" >> $GITHUB_ENV
-          terraform init
+           echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_ENV
+           git config --global credential.helper cache
+           git config --global credential.helper 'cache --timeout=3600'
+           git clone https://github.com/Samaysinghai/newone.git
+           terraform init
           
 
