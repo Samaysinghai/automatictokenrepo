@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      
       MY_PAT: ${{ secrets.GH_TOKEN }}
 
     steps:
@@ -19,7 +18,6 @@ jobs:
 
       - name: Set up Terraform
         run: |
-          git config --global credential.helper store
-          echo "https://GH_TOKEN:x-oauth-basic@github.com" > ~/.git-credentials
+          
           terraform init
           # Other Terraform commands...
