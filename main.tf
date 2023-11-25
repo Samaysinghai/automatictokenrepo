@@ -1,11 +1,4 @@
 module "aci" {
-  source = "git::https://github.com/Samaysinghai/newone.git"
+  source = "git::https:${{secrets.GH_token}}//github.com/Samaysinghai/newone.git"
 }
-terraform {
-  backend "remote" {
-    organization = "Samaysinghai"
-    workspaces = {
-      name = "Samaysinghai/newone"
-    }
-  }
-}
+
