@@ -16,7 +16,8 @@ jobs:
       - name: Set up Terraform
         run: |
           export GITHUB_TOKEN=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
-           terraform init -input=false
+           terraform init -debug
+
 
       - name: Terraform Plan
         run: terraform plan -input=false
