@@ -19,5 +19,4 @@ jobs:
 
       - name: Set up Terraform
         run: |
-          terraform init -backend-config="token=${GH_TOKEN}"
-          # Other Terraform commands...
+          terraform init 
