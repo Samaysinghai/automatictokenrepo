@@ -10,7 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      MY_PAT: ${{ secrets.GH_TOKEN }}
+      USER_NAME: "${{ env.USER_NAME }}"
+      TOKEN: "${{ secrets.TOKEN }}"
 
     steps:
       - name: Checkout code
