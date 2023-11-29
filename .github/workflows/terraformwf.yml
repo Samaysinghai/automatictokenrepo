@@ -15,6 +15,6 @@ jobs:
 
       - name: Set up Terraform
         run: |
-          
+          git config --global url."https://${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}@github.com/Samaysinghai/newone.git".insteadOf "https://github.com/Samaysinghai/newone.git"
           terraform init
           # Other Terraform commands...
