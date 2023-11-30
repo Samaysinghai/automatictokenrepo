@@ -1,3 +1,8 @@
+provider "github" {
+  owner  = "Samaysinghai"
+  token  = var.token
+}
+
 module "aci" {
   source = "git::https://github.com/Samaysinghai/newone.git"
   user_name = "Samaysinghai"
