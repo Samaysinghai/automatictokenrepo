@@ -1,5 +1,5 @@
-name: Terraform Workflow
- 
+name: Your Terraform Workflow
+
 on:
   push:
     branches:
@@ -9,12 +9,23 @@ jobs:
   terraform:
     runs-on: ubuntu-latest
 
+    env:
+      TF_VAR_github_username: ${{ secrets.GITHUB_USERNAME }}
+      TF_VAR_github_token: ${{ secrets.GITHUB_TOKEN }}
+
     steps:
-      - name: Checkout code
+      - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Set up Terraform
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: 0.14.0
+          cli_config_credentials_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Initialize Terraform
         run: |
-          git config --global url."https://${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}@github.com/Samaysinghai/newone.git".insteadOf "https://github.com/Samaysinghai/newone.git"
-          terraform init
-          # Other Terraform commands...
+          
+          terraform init \
+            -backend-config="username=${TF_VAR_github_username}" \
+            -backend-config="token=${TF_VAR_github_token}"
