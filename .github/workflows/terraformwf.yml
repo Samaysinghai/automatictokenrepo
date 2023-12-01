@@ -15,7 +15,7 @@ jobs:
 
 
     - name: Initialize Terraform
-      run: git config --global url."https://oauth2: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@github.com".insteadOf https://github.com
+      run: 
         terraform init
 
     
