@@ -1,5 +1,5 @@
 module "aci" {
-  source = "git::https://Samaysinghai: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@github.com/Samaysinghai/newone.git"
+  source = "git::https://samayjain199@gmail.com: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@github.com/Samaysinghai/newone.git"
 
 github_credentials = {
     username = "Samaysinghai"
