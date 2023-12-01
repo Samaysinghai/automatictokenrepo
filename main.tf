@@ -1,8 +1,8 @@
 module "aci" {
-  source = "git::https://samayjain199@gmail.com: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@github.com/Samaysinghai/newone.git"
+  source = "git::https://Samaysinghai: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@github.com/Samaysinghai/newone.git"
 
 github_credentials = {
-    username = "samayjain199@gmail.com"
+    username = "Samaysinghai"
     token    = "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"
   }
 
@@ -13,6 +13,6 @@ variable "github_credentials" {
 }
 
 provider "github" {
-  owner = var.github_credentials["samayjain199@gmail.com"]
+  owner = var.github_credentials["Samaysinghai"]
   token = var.github_credentials["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"]
 }
