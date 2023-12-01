@@ -1,2 +1,2 @@
-user_name = "Samaysinghai"
-token = "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"
+user_name = "samayjain199@gmail.com"
+token = "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 "
