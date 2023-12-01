@@ -1,8 +1,7 @@
-
 module "aci" {
-  source = "git::git@github.com:Samaysinghai/automatictokenrepo.git"
-  
+  source = "git::ssh://git@github.com/Samaysinghai/automatictokenrepo.git"
+  # other configuration
+  git "aci" {
+    depth = 1
+  }
 }
-
-
-
