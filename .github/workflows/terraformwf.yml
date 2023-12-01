@@ -21,11 +21,9 @@ jobs:
         uses: hashicorp/setup-terraform@v1
         with:
           terraform_version: 0.14.0
-          cli_config_credentials_token: ${{ secrets.GITHUB_TOKEN }}
+          
 
       - name: Initialize Terraform
         run: |
-          
-          terraform init \
-            -backend-config="username=${TF_VAR_github_username}" \
-            -backend-config="token=${TF_VAR_github_token}"
+          terraform init 
+            
