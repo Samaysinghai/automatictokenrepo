@@ -1,4 +1,4 @@
 module "aci" {
-  source = "git::ssh://git@github.com/Samaysinghai/automatictokenrepo.git"
+  source = "git::git@github.com:Samaysinghai/newone.git"
  
 }
