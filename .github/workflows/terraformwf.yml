@@ -9,13 +9,17 @@ jobs:
   terraform:
     runs-on: ubuntu-latest
 
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
+
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-
-    - name: Initialize Terraform
-      run: 
-        terraform init
-
-    
+      - name: Set up Terraform
+        run: |
+          git config --global credential.helper store
+          echo "https://GIT_TOKEN:x-oauth-basic@github.com" > ~/.git-credentials
+          terraform init
+          # Other Terraform commands...
