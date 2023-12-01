@@ -1,4 +1,4 @@
-name: Your Terraform Workflow
+name: Terraform Workflow
 
 on:
   push:
@@ -9,15 +9,18 @@ jobs:
   terraform:
     runs-on: ubuntu-latest
 
-    env:
-      TF_VAR_github_username: ${{ secrets.GITHUB_USERNAME }}
-      TF_VAR_github_token: ${{ secrets.GITHUB_TOKEN }}
-
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-        
-      - name: Initialize Terraform
-        run: |
-          terraform init 
-            
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Configure SSH Key
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+    - name: Initialize Terraform
+      run: terraform init
+
+    
